@@ -13,32 +13,32 @@ struct LocationsView: View {
     @EnvironmentObject private var vm: LocationsViewModel
     
     /*
-
-    struct MapView: View {
-        @State private var coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
-        
-        var body: some View {
-            Map(coordinateRegion: .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))))
-                .overlay(
-                    Circle()
-                        .stroke(Color.blue, lineWidth: 2)
-                        .frame(width: 40, height: 40)
-                )
-        }
-    }
-   
-
-    struct ContentView: View {
-        var body: some View {
-            MapView()
-        }
-    }
-
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
+     
+     struct MapView: View {
+     @State private var coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+     
+     var body: some View {
+     Map(coordinateRegion: .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))))
+     .overlay(
+     Circle()
+     .stroke(Color.blue, lineWidth: 2)
+     .frame(width: 40, height: 40)
+     )
+     }
+     }
+     
+     
+     struct ContentView: View {
+     var body: some View {
+     MapView()
+     }
+     }
+     
+     struct ContentView_Previews: PreviewProvider {
+     static var previews: some View {
+     ContentView()
+     }
+     }
      */
     
     var body: some View {
@@ -46,10 +46,10 @@ struct LocationsView: View {
             Map(coordinateRegion: $vm.mapRegion)
             Map(coordinateRegion: $vm.mapRegion, annotationItems: vm.locations, annotationContent: {location in
                 MapMarker(coordinate: location.coordinates)
-                    
-
+                
+                
             })
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             VStack(spacing: 0){
                 header
@@ -64,8 +64,8 @@ struct LocationsView: View {
                                         radius:20)
                                 .padding()
                                 .transition(.asymmetric(
-                                   insertion: .move(edge: .trailing),
-                                   removal: .move(edge: .leading)))
+                                    insertion: .move(edge: .trailing),
+                                    removal: .move(edge: .leading)))
                         }
                     }
                 }
