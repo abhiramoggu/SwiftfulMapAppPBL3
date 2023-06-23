@@ -11,22 +11,71 @@ import MapKit
 struct LocationsView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
+    @State private var isZStack1Active = true
     
     var body: some View {
-        ZStack{
-            mapLayer
-            .ignoresSafeArea()
-            
-            VStack(spacing: 0){
-                header
-                     .padding()
-                Spacer()
-                locationsPreviewStack
+        NavigationView {
+            List{
+                VStack {
+                    Button(action: {
+                        isZStack1Active.toggle()
+                    }) {
+                        Text("Switch Maps")
+                            .foregroundColor(.primary)
+                            .padding()
+                    }
+                    if isZStack1Active {
+                        ZStack{
+                            mapLayer
+                                .ignoresSafeArea()
+                            VStack(spacing: 0){
+                                header
+                                    .padding()
+                                Text("Fish Location")
+                                    .foregroundColor(.primary)
+                                    .padding()
+                                Spacer()
+                                locationsPreviewStack
+                            }
+                            
+                        }
+                        //.navigationBarItems(leading: backButton) // Add this line
+                        .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+                            LocationDetailView(location: location)
+                        }
+                    }
+                    
+                    else {
+                        ZStack{
+                            
+                            mapLayer
+                                .ignoresSafeArea()
+                            /*
+                            VStack(spacing: 0){
+                                header
+                                    .padding()
+                                Text("Fish Boxes")
+                                    .foregroundColor(.primary)
+                                    .padding()
+                                Spacer()
+                                locationsPreviewStack
+                             */
+                            }
+                            
+                        }
+                        //.navigationBarItems(leading: backButton) // Add this line
+                        //.sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+                            //LocationDetailView(location: location)
+                        //}
+                    //}
+                    
+                }
+                
             }
+            .listStyle(InsetGroupedListStyle())
         }
-        .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
-            LocationDetailView(location: location)
-        }
+        .padding()
+        .background(Color.green)
     }
 }
 
@@ -38,6 +87,7 @@ struct LocationsView_Previews: PreviewProvider {
 }
 
 extension LocationsView {
+    
     private var header: some View {
         VStack{
             Button(action: vm.toggleLocationsList) {
@@ -95,4 +145,15 @@ extension LocationsView {
             }
         }
     }
+    
+    private var backButton: some View {
+            Button(action: {
+                vm.showLocationsList = false
+            }) {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.primary)
+                    .imageScale(.large)
+                    .padding()
+            }
+        }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 
 class LocationsViewModel: ObservableObject{
     
+    
     // All loaded locations
     @ Published var locations: [Location]
     
@@ -24,6 +25,9 @@ class LocationsViewModel: ObservableObject{
     // Current Region on Map
     @ Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    
+    //Show Map
+    //@Published var showMapScreen2: Bool = false
     
     // Show List of Locations
     @ Published var showLocationsList: Bool = false
@@ -46,7 +50,13 @@ class LocationsViewModel: ObservableObject{
                 span: mapSpan)
         }
     }
-    
+    /*
+    func toggleMaps() {
+        withAnimation(.easeInOut){
+            showMapScreen2 = !showMapScreen2
+        }
+    }
+    */
     func toggleLocationsList() {
         withAnimation(.easeInOut) {
             showLocationsList = !showLocationsList

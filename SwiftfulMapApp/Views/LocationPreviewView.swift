@@ -10,6 +10,7 @@ import SwiftUI
 struct LocationPreviewView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
+    
     let location: Location
     
     var body: some View {
