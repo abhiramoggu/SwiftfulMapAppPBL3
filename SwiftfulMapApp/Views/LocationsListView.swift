@@ -40,7 +40,7 @@ extension LocationsListView{
     
     private func listRowView(location: Location) -> some View {
         HStack{
-            if let imageName = location.imageNames.first{
+            if let imageName = location.imageNames.first! {
                 Image(imageName)
                     .resizable()
                     .scaledToFill()
