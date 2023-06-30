@@ -15,66 +15,67 @@ struct LocationsView: View {
     
     var body: some View {
         NavigationView {
-            List{
-                VStack {
-                    Button(action: {
-                        isZStack1Active.toggle()
-                    }) {
-                        Text("Switch Maps")
-                            .foregroundColor(.primary)
-                            .padding()
-                    }
-                    if isZStack1Active {
-                        ZStack{
-                            mapLayer
-                                .ignoresSafeArea()
-                            VStack(spacing: 0){
-                                header
-                                    .padding()
-                                Text("Fish Location")
-                                    .foregroundColor(.primary)
-                                    .padding()
-                                Spacer()
-                                locationsPreviewStack
-                            }
-                            
-                        }
-                        //.navigationBarItems(leading: backButton) // Add this line
-                        .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
-                            LocationDetailView(location: location)
-                        }
-                    }
-                    
-                    else {
-                        ZStack{
-                            
-                            mapLayer
-                                .ignoresSafeArea()
-                            /*
-                            VStack(spacing: 0){
-                                header
-                                    .padding()
-                                Text("Fish Boxes")
-                                    .foregroundColor(.primary)
-                                    .padding()
-                                Spacer()
-                                locationsPreviewStack
-                             */
-                            }
-                            
-                        }
-                        //.navigationBarItems(leading: backButton) // Add this line
-                        //.sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
-                            //LocationDetailView(location: location)
-                        //}
-                    //}
+           // List{
+            VStack {
+                
+                Button(action: {
+                    isZStack1Active.toggle()
+                }) {
+                    Text("Switch Maps")
+                        .font(.title2)
+                        .fontWeight(.black)
+                        .foregroundColor(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.accentColor)
+                        .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                     
                 }
                 
-            }
-            .listStyle(InsetGroupedListStyle())
+                if isZStack1Active {
+                    ZStack{
+                        mapLayer
+                            .ignoresSafeArea()
+                        
+                        VStack(spacing: 70){
+                            header
+                                .padding()
+                            Spacer()
+                            
+                            locationsPreviewStack
+                        }
+                        
+                    }
+                    //.navigationBarItems(leading: backButton) // Add this line
+                    .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+                        LocationDetailView(location: location)
+                    }
+                }
+                
+                else {
+                    ZStack{
+                        
+                        mapLayer2
+                            .ignoresSafeArea()
+                        
+                        VStack(spacing: 0){
+                            header2
+                            Text("Fish Box Locations")
+                            
+                            Spacer()
+                            
+                            Text("Locations")
+                        }
+                    }
+                }
+                
+            
+                }
+                .padding()
+           // }
+            //.listStyle(InsetGroupedListStyle())
         }
-        .padding()
+        //.padding()
         .background(Color.green)
     }
 }
@@ -116,6 +117,26 @@ extension LocationsView {
         .shadow(color:Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
     }
     
+    private var header2: some View {
+        //VStack{
+            Button(action: {
+                print("hi")
+            }) {
+                Text(vm.mapLocation.name + ", " + vm.mapLocation.cityName)
+                    .font(.title2)
+                    .fontWeight(.black)
+                    .foregroundColor(.primary)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+            }
+            
+            
+       // }
+        .background(.thickMaterial)
+        .cornerRadius(10)
+        .shadow(color:Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+    }
+    
     private var mapLayer: some View{
         Map(coordinateRegion: $vm.mapRegion, annotationItems: vm.locations, annotationContent: {location in
             //MapMarker(coordinate: location.coordinates, tint: .blue)
@@ -128,6 +149,10 @@ extension LocationsView {
                     }
             }
         })
+    }
+    
+    private var mapLayer2: some View{
+        Map(coordinateRegion: $vm.mapRegion)
     }
     
     private var locationsPreviewStack: some View{
@@ -146,14 +171,5 @@ extension LocationsView {
         }
     }
     
-    private var backButton: some View {
-            Button(action: {
-                vm.showLocationsList = false
-            }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.primary)
-                    .imageScale(.large)
-                    .padding()
-            }
-        }
+    
 }

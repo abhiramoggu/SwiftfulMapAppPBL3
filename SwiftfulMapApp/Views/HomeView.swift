@@ -11,50 +11,31 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView{
-            VStack {
+            VStack (spacing: 500){
                 Text("Home")
                     .font(.largeTitle)
-                     
-               
-                
+                    //.alignment(Center)
                     NavigationLink(destination: LocationsView()) {
                         
-                        Text("Fish Locations")
-                        //.font(.title)
-                        //.fontWeight(.semibold)
-                        //.foregroundColor(.white)
-                        //.padding()
-                        //.background(Color.blue)
-                        //.cornerRadius(10)
-                        
+                        Text("Maps View")
                             .font(.title2)
                             .fontWeight(.black)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
                             .padding()
-                            .background(Color.blue)
-                    }
-                    NavigationLink(destination: LocationsView()) {
-                        
-                        Text("Box Locations")
-                        //.font(.title)
-                        //.fontWeight(.semibold)
-                        //.foregroundColor(.white)
-                        //.padding()
-                        //.background(Color.blue)
-                        //.cornerRadius(10)
-                        
-                            .font(.title2)
-                            .fontWeight(.black)
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.blue)
+                            .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
+                    
                     }
                 }
-                Spacer()
-                    
-            }
             .padding()
-            .navigationBarTitle("Home")
+            .background(Color.yellow)
+            .navigationBarTitle("Home", displayMode: .inline)
+            
+            }
+    
+            
             
         }
     }

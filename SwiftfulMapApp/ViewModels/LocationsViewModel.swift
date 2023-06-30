@@ -11,7 +11,6 @@ import SwiftUI
 
 class LocationsViewModel: ObservableObject{
     
-    
     // All loaded locations
     @ Published var locations: [Location]
     
