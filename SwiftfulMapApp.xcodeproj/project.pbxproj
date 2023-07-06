@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		384CE2852A3F18F300915364 /* SwiftfulMapAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2842A3F18F300915364 /* SwiftfulMapAppApp.swift */; };
-		384CE2872A3F18F300915364 /* ContentView5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2862A3F18F300915364 /* ContentView5.swift */; };
 		384CE28C2A3F18F500915364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384CE28B2A3F18F500915364 /* Preview Assets.xcassets */; };
 		384CE2932A3F197D00915364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384CE2922A3F197D00915364 /* Assets.xcassets */; };
 		384CE2992A3F1B1D00915364 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2982A3F1B1D00915364 /* Location.swift */; };
@@ -22,12 +21,15 @@
 		384CE2AC2A44865300915364 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2AB2A44865300915364 /* HomeView.swift */; };
 		384CE2AE2A44981500915364 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2AD2A44981500915364 /* ContentView.swift */; };
 		384CE2B02A44B6EB00915364 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2AF2A44B6EB00915364 /* HomeViewModel.swift */; };
+		38DF03EF2A54F8870011B052 /* WeatherServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF03EE2A54F8870011B052 /* WeatherServices.swift */; };
+		38DF03F22A5510BC0011B052 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF03F12A5510BC0011B052 /* Weather.swift */; };
+		38DF03F62A55761E0011B052 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF03F52A55761E0011B052 /* WeatherView.swift */; };
+		38DF03F82A5596440011B052 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF03F72A5596440011B052 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		384CE2812A3F18F300915364 /* SwiftfulMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftfulMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384CE2842A3F18F300915364 /* SwiftfulMapAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftfulMapAppApp.swift; sourceTree = "<group>"; };
-		384CE2862A3F18F300915364 /* ContentView5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView5.swift; sourceTree = "<group>"; };
 		384CE28B2A3F18F500915364 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		384CE2922A3F197D00915364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		384CE2982A3F1B1D00915364 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -41,6 +43,11 @@
 		384CE2AB2A44865300915364 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		384CE2AD2A44981500915364 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../ContentView.swift; sourceTree = "<group>"; };
 		384CE2AF2A44B6EB00915364 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		38DF03EE2A54F8870011B052 /* WeatherServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServices.swift; sourceTree = "<group>"; };
+		38DF03F02A54FCD90011B052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		38DF03F12A5510BC0011B052 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		38DF03F52A55761E0011B052 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		38DF03F72A5596440011B052 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +80,9 @@
 		384CE2832A3F18F300915364 /* SwiftfulMapApp */ = {
 			isa = PBXGroup;
 			children = (
+				38DF03F02A54FCD90011B052 /* Info.plist */,
+				38DF03ED2A54A0650011B052 /* Weather */,
 				384CE2842A3F18F300915364 /* SwiftfulMapAppApp.swift */,
-				384CE2862A3F18F300915364 /* ContentView5.swift */,
 				384CE2AD2A44981500915364 /* ContentView.swift */,
 				384CE29A2A3F1D1100915364 /* DataServices */,
 				384CE2962A3F1AC100915364 /* Views */,
@@ -130,6 +138,17 @@
 				384CE29B2A3F1D5500915364 /* LocationsDataService.swift */,
 			);
 			path = DataServices;
+			sourceTree = "<group>";
+		};
+		38DF03ED2A54A0650011B052 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				38DF03EE2A54F8870011B052 /* WeatherServices.swift */,
+				38DF03F12A5510BC0011B052 /* Weather.swift */,
+				38DF03F52A55761E0011B052 /* WeatherView.swift */,
+				38DF03F72A5596440011B052 /* WeatherViewModel.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,14 +221,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DF03EF2A54F8870011B052 /* WeatherServices.swift in Sources */,
 				384CE29C2A3F1D5500915364 /* LocationsDataService.swift in Sources */,
 				384CE2A82A44405B00915364 /* LocationMapAnnotationView.swift in Sources */,
 				384CE2AE2A44981500915364 /* ContentView.swift in Sources */,
+				38DF03F22A5510BC0011B052 /* Weather.swift in Sources */,
 				384CE2A42A3F321A00915364 /* LocationsListView.swift in Sources */,
 				384CE2A62A3F499600915364 /* LocationPreviewView.swift in Sources */,
+				38DF03F62A55761E0011B052 /* WeatherView.swift in Sources */,
 				384CE2A22A3F298700915364 /* LocationsViewModel.swift in Sources */,
 				384CE2AC2A44865300915364 /* HomeView.swift in Sources */,
-				384CE2872A3F18F300915364 /* ContentView5.swift in Sources */,
+				38DF03F82A5596440011B052 /* WeatherViewModel.swift in Sources */,
 				384CE2B02A44B6EB00915364 /* HomeViewModel.swift in Sources */,
 				384CE2A02A3F20F400915364 /* LocationsView.swift in Sources */,
 				384CE2992A3F1B1D00915364 /* Location.swift in Sources */,
@@ -346,6 +368,7 @@
 				DEVELOPMENT_TEAM = UT2MZUP8NJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftfulMapApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -375,6 +398,7 @@
 				DEVELOPMENT_TEAM = UT2MZUP8NJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftfulMapApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
