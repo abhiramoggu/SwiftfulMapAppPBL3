@@ -62,15 +62,14 @@ struct SwiftfulMapAppApp: App {
     }
 }
 */
-
 import SwiftUI
 
 @main
-struct WeatherApp: App {
-  var body: some Scene {
-    WindowGroup {
-      let weatherServices = WeatherService()
-      WeatherView(viewModel: WeatherViewModel(weatherServices: weatherServices))
+
+struct OpenWeatherAPI: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
-  }
 }

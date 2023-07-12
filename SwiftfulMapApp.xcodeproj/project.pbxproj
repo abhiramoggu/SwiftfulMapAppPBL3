@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24530CD22A5AFCFB00AAF8E7 /* Kusatsu.html in Resources */ = {isa = PBXBuildFile; fileRef = 24530CCE2A5AFCFA00AAF8E7 /* Kusatsu.html */; };
+		24530CD32A5AFCFB00AAF8E7 /* Omihachiman.html in Resources */ = {isa = PBXBuildFile; fileRef = 24530CCF2A5AFCFB00AAF8E7 /* Omihachiman.html */; };
+		24530CD42A5AFCFB00AAF8E7 /* Nagahama.html in Resources */ = {isa = PBXBuildFile; fileRef = 24530CD02A5AFCFB00AAF8E7 /* Nagahama.html */; };
+		24530CD52A5AFCFB00AAF8E7 /* Weather.html in Resources */ = {isa = PBXBuildFile; fileRef = 24530CD12A5AFCFB00AAF8E7 /* Weather.html */; };
 		384CE2852A3F18F300915364 /* SwiftfulMapAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CE2842A3F18F300915364 /* SwiftfulMapAppApp.swift */; };
 		384CE28C2A3F18F500915364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384CE28B2A3F18F500915364 /* Preview Assets.xcassets */; };
 		384CE2932A3F197D00915364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384CE2922A3F197D00915364 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24530CCE2A5AFCFA00AAF8E7 /* Kusatsu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Kusatsu.html; path = "../../../WeαtherAPIWebApp/Kusatsu.html"; sourceTree = "<group>"; };
+		24530CCF2A5AFCFB00AAF8E7 /* Omihachiman.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Omihachiman.html; path = "../../../WeαtherAPIWebApp/Omihachiman.html"; sourceTree = "<group>"; };
+		24530CD02A5AFCFB00AAF8E7 /* Nagahama.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Nagahama.html; path = "../../../WeαtherAPIWebApp/Nagahama.html"; sourceTree = "<group>"; };
+		24530CD12A5AFCFB00AAF8E7 /* Weather.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Weather.html; path = "../../../WeαtherAPIWebApp/Weather.html"; sourceTree = "<group>"; };
 		384CE2812A3F18F300915364 /* SwiftfulMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftfulMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384CE2842A3F18F300915364 /* SwiftfulMapAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftfulMapAppApp.swift; sourceTree = "<group>"; };
 		384CE28B2A3F18F500915364 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -119,6 +127,10 @@
 				384CE2A52A3F499600915364 /* LocationPreviewView.swift */,
 				384CE2A72A44405B00915364 /* LocationMapAnnotationView.swift */,
 				384CE2A92A4446FB00915364 /* LocationDetailView.swift */,
+				24530CCE2A5AFCFA00AAF8E7 /* Kusatsu.html */,
+				24530CD02A5AFCFB00AAF8E7 /* Nagahama.html */,
+				24530CCF2A5AFCFB00AAF8E7 /* Omihachiman.html */,
+				24530CD12A5AFCFB00AAF8E7 /* Weather.html */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				384CE2932A3F197D00915364 /* Assets.xcassets in Resources */,
+				24530CD52A5AFCFB00AAF8E7 /* Weather.html in Resources */,
+				24530CD42A5AFCFB00AAF8E7 /* Nagahama.html in Resources */,
+				24530CD32A5AFCFB00AAF8E7 /* Omihachiman.html in Resources */,
+				24530CD22A5AFCFB00AAF8E7 /* Kusatsu.html in Resources */,
 				384CE28C2A3F18F500915364 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
