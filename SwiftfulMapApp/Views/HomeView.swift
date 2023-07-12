@@ -1,9 +1,3 @@
-//
-//  HomeView.swift
-//  SwiftfulMapApp
-//
-//  Created by Abhiram Oggu on 2023/06/22.
-//
 import SwiftUI
 import WebKit
 
@@ -13,14 +7,11 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack (spacing: 500) {
+            VStack(spacing: 20) {
                 WebView(request: URLRequest(url: Bundle.main.url(forResource: "Weather", withExtension: "html")!))
-                    .padding()
+                    .frame(width: 360, height: 540) // Adjust the size of the WebView
                     .background(Color.yellow)
                     .navigationBarTitle("Home", displayMode: .inline)
-                
-                Text("Home")
-                    .font(.largeTitle)
                 
                 NavigationLink(destination: LocationsView()) {
                     Text("Fish Locations")
@@ -39,10 +30,11 @@ struct HomeView: View {
                         .padding()
                         .background(Color.blue)
                 }
+                
+                Spacer()
             }
-            .navigationBarHidden(true) // Hide the navigation bar
-            .padding()
             .background(Color.white)
+            .navigationBarHidden(true) // Hide the navigation bar
             .edgesIgnoringSafeArea(.all) // Extend the content to the edges
         }
     }
@@ -60,13 +52,9 @@ struct WebView: UIViewRepresentable {
     }
 }
 
-    
-
-    
-
-    struct HomeView_Previews: PreviewProvider {
-        static var previews: some View {
-            HomeView()
-                .environmentObject(LocationsViewModel())
-        }
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+            .environmentObject(LocationsViewModel())
     }
+}
