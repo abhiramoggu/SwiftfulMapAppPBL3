@@ -14,6 +14,7 @@ class LocationsViewModel: ObservableObject{
     // All loaded locations
     @ Published var locations: [Location]
     
+    
     // Current Location on Map
     @ Published var mapLocation: Location {
         didSet{

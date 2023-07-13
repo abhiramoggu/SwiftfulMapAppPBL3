@@ -13,6 +13,7 @@ struct LocationsView: View {
     @EnvironmentObject private var vm: LocationsViewModel
     @State private var isZStack1Active = true
     
+    
     var body: some View {
         NavigationView {
            // List{
@@ -89,6 +90,7 @@ struct LocationsView_Previews: PreviewProvider {
 
 extension LocationsView {
     
+    
     private var header: some View {
         VStack{
             Button(action: vm.toggleLocationsList) {
@@ -117,6 +119,7 @@ extension LocationsView {
         .shadow(color:Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
     }
     
+        
     private var header2: some View {
         //VStack{
             Button(action: {

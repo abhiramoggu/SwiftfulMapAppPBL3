@@ -6,7 +6,7 @@
 //
 
 
-/*
+
 import SwiftUI
 
 @main
@@ -19,15 +19,9 @@ struct SwiftfulMapAppApp: App {
             LocationsView()
                 .environmentObject(vm)
         }
-        
-        WindowGroup {
-          let weatherService = WeatherServices()
-          WeatherView(viewModel: WeatherViewModel(weatherService: weatherService))
-        }
     }
     
 }
-*/
 
 /*
  
@@ -62,7 +56,7 @@ struct SwiftfulMapAppApp: App {
     }
 }
 */
-
+/*
 import SwiftUI
 
 @main
@@ -74,3 +68,4 @@ struct WeatherApp: App {
     }
   }
 }
+*/

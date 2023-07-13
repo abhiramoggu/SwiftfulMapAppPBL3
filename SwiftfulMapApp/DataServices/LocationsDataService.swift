@@ -54,18 +54,119 @@ class LocationsDataService {
                 "paris-eiffeltower-2",
             ],
             link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
+        
         Location(
-            name: "Black Fish",
-            cityName: "Near Wakamiya",
-            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
-            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            name: "Violet Fish",
+            cityName: "Near Nara",
+            coordinates: CLLocationCoordinate2D(latitude: 35.003663, longitude: 135.892481),
+            description: "Devi",
             imageNames: [
                 "paris-louvre-1",
                 "paris-louvre-2",
                 "paris-louvre-3",
             ],
             link: "https://en.wikipedia.org/wiki/Louvre"),
+        Location(
+            name: "Fish Box Location 1",
+            cityName: "Kotsugi",
+            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
+            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            imageNames: [
+                "fishbox",
+            ],
+            link: "https://en.wikipedia.org/wiki/Louvre"),
+        Location(
+            name: "Fish Box Location 2",
+            cityName: "Kotsugi",
+            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
+            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            imageNames: [
+                "fishbox",
+            ],
+            link: "https://en.wikipedia.org/wiki/Louvre"),
+        Location(
+            name: "Fish Box Location 3",
+            cityName: "Kotsugi",
+            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
+            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            imageNames: [
+                "fishbox",
+            ],
+            link: "https://en.wikipedia.org/wiki/Louvre"),
+        Location(
+            name: "Fish Box Location 4",
+            cityName: "Kotsugi",
+            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
+            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            imageNames: [
+                "fishbox",
+            ],
+            link: "https://en.wikipedia.org/wiki/Louvre"),
+        Location(
+            name: "Fish Box Location 5",
+            cityName: "Kotsugi",
+            coordinates: CLLocationCoordinate2D(latitude: 35.059813, longitude: 135.90475),
+            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            imageNames: [
+                "fishbox",
+            ],
+            link: "https://en.wikipedia.org/wiki/Louvre")
     ]
     
 }
+ 
 
+/*
+import Foundation
+import MapKit
+
+class LocationsDataService {
+    static let locations: [Location] = CSVParser.parseCSV()
+}
+*/
+/*
+import Foundation
+import MapKit
+
+class LocationsDataService {
+    
+    static var locations: [Location] = [] // Empty array
+    
+    static func loadLocationsFromCSV() {
+        guard let csvURL = Bundle.main.url(forResource: "locations", withExtension: "csv") else {
+            fatalError("Unable to find locations.csv file")
+        }
+        
+        do {
+            let csvData = try String(contentsOf: csvURL, encoding: .utf8)
+            let csvRows = csvData.components(separatedBy: "\n")
+            
+            for row in csvRows.dropFirst() { // Skip the header row
+                let columns = row.components(separatedBy: ",")
+                
+                guard columns.count == 8 else {
+                    continue // Skip rows with incorrect number of columns
+                }
+                
+                let name = columns[0]
+                let cityName = columns[1]
+                let latitude = Double(columns[2]) ?? 0.0
+                let longitude = Double(columns[3]) ?? 0.0
+                let description = columns[4]
+                let imageNames = columns[5..<8].map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                let link = columns[8]
+                
+                let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let location = Location(name: name, cityName: cityName, coordinates: coordinates, description: description, imageNames: imageNames, link: link)
+                locations.append(location)
+            }
+        } catch {
+            fatalError("Error loading locations from CSV: \(error)")
+        }
+    }
+    
+}
+
+// Call the function to load locations from the CSV file
+LocationsDataService.loadLocationsFromCSV()
+*/
